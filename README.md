@@ -38,7 +38,7 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository:**
 ```bash
-   git clone https://github.com/yourusername/crypto_etl.git
+   git clone https://github.com/yusufalamin001/crypto_etl.git
    cd crypto_etl
 ```
 
