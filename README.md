@@ -95,6 +95,7 @@ To set up the schedule on your machine:
 6. In the "Add arguments" field enter:
 ```
    main.py
+```
 ## 9. WhatsApp Price Alerts
 
 This pipeline includes an automated alert system that sends a WhatsApp 
