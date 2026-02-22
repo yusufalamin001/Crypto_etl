@@ -95,6 +95,42 @@ To set up the schedule on your machine:
 6. In the "Add arguments" field enter:
 ```
    main.py
+## 9. WhatsApp Price Alerts
+
+This pipeline includes an automated alert system that sends a WhatsApp 
+notification when any coin experiences a price change exceeding the 
+configured threshold within 24 hours.
+
+**How it works:**
+- After each pipeline run the alert system checks every coin's 
+  price_change_24h value
+- If the absolute price change exceeds the threshold a WhatsApp message 
+  is sent automatically
+- Both price increases and drops trigger alerts
+
+**Configuration:**
+The alert threshold is controlled in `config.py`:
+```python
+PRICE_CHANGE_THRESHOLD = 5.0  # percentage
+```
+Change this value to make alerts more or less sensitive.
+
+**Setup Requirements:**
+- A free Twilio account at https://www.twilio.com
+- A connected WhatsApp sandbox number
+- The following environment variables in your `.env` file:
+```
+TWILIO_ACCOUNT_SID=your_account_sid
+TWILIO_AUTH_TOKEN=your_auth_token
+TWILIO_WHATSAPP_FROM=whatsapp:+14155238886
+TWILIO_WHATSAPP_TO=whatsapp:+your_number
+```
+
+**Sample Alert Message:**
+```
+🚨 Crypto Alert! Bitcoin has changed by 1049.60 in the last 24 hours.
+Current price: $68608.0
+```
 ```
 7. In the "Start in" field enter your project folder path:
 ```
