@@ -2,7 +2,7 @@ import logging
 from extract import extract
 from transform import transform
 from load import load
-
+from alert import check_and_alert
 
 logging.basicConfig(
     level=logging.INFO,
@@ -16,6 +16,7 @@ logging.basicConfig(
 def main():
     raw_data = extract()
     clean_data = transform(raw_data)
+    check_and_alert(clean_data)
     load(clean_data)
 
 if __name__ == "__main__":
