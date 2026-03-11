@@ -7,7 +7,7 @@ def transform(raw_data):
         return []
     
     clean_data = []
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    timestamp = datetime.now().strftime("%Y-%m-%d")
 
     for coin in raw_data:
         clean_coin = {

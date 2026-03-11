@@ -15,7 +15,8 @@ def load(clean_data):
             coin_name TEXT,
             current_price DOUBLE,
             price_change_24h DOUBLE,
-            recorded_at TEXT
+            recorded_at TEXT,
+            UNIQUE(coin_name, recorded_at)
         )
     """)
 
@@ -23,6 +24,7 @@ def load(clean_data):
         conn.execute(f"""
             INSERT INTO {TABLE_NAME} (coin_name, current_price, price_change_24h, recorded_at)
             VALUES (?, ?, ?, ?)
+            ON CONFLICT (coin_name, recorded_at) DO NOTHING
         """, (coin["coin_name"], coin["current_price"], coin["price_change_24h"], coin["recorded_at"]))
 
     conn.close()
