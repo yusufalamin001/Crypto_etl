@@ -4,5 +4,4 @@ crypto_data.db
 pipeline.log
 __pycache__/
 *.pyc
-crypto_data.duckdb
 data/
