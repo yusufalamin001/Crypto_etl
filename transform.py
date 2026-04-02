@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 import logging
 
 def transform(raw_data):
@@ -7,7 +7,7 @@ def transform(raw_data):
         return []
     
     clean_data = []
-    timestamp = datetime.now().strftime("%Y-%m-%d")
+    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     for coin in raw_data:
         clean_coin = {

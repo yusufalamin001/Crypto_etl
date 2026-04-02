@@ -1,8 +1,4 @@
 import logging
-from extract import extract
-from transform import transform
-from load import load
-from alert import check_and_alert
 
 logging.basicConfig(
     level=logging.INFO,
@@ -12,6 +8,13 @@ logging.basicConfig(
         logging.FileHandler("pipeline.log")
     ]
 )
+
+
+from extract import extract
+from transform import transform
+from load import load
+from alert import check_and_alert
+
 
 def main():
     raw_data = extract()
